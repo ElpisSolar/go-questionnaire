@@ -2,15 +2,21 @@ package main
 
 import (
 	"encoding/json"
+	"flag"
 	"fmt"
 	"html/template"
 	"io/ioutil"
+	"log"
 	"net/http"
 	"os"
 	"strings"
 	"time"
 
 	"github.com/bluele/gforms"
+)
+
+var (
+	listenAddr = flag.String("l", ":8080", "Address to listen on")
 )
 
 func check(e error) {
@@ -182,6 +188,8 @@ func questionnaireHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+	flag.Parse()
 	http.HandleFunc("/", questionnaireHandler)
-	http.ListenAndServe(":8", nil)
+	log.Println("Listening on", *listenAddr)
+	log.Fatal(http.ListenAndServe(*listenAddr, nil))
 }
