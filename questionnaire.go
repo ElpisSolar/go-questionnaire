@@ -2,15 +2,22 @@ package main
 
 import (
 	"encoding/json"
+	"flag"
 	"fmt"
 	"html/template"
 	"io/ioutil"
+	"log"
 	"net/http"
 	"os"
 	"strings"
 	"time"
 
 	"github.com/bluele/gforms"
+)
+
+var (
+	listenAddr       = flag.String("l", ":8080", "Address to listen on")
+	answersDirectory = flag.String("d", "questionnaire-answers", "Directory to store questionaire answers")
 )
 
 func check(e error) {
@@ -123,7 +130,7 @@ func getThankYouMessage(locale string) thankYouMessage {
 	check(err)
 
 	message := messages[locale].(map[string]interface{})["thankYou"].(string)
-	message = fmt.Sprintf(message, "http://10.10.0.1")
+	message = fmt.Sprintf(message, "/")
 	return thankYouMessage{StringToHTML(message)}
 }
 
@@ -169,7 +176,7 @@ func questionnaireHandler(w http.ResponseWriter, r *http.Request) {
 	timeString := fmt.Sprintf("%d-%02d-%02dT%02d:%02d:%02d",
 		time.Now().Year(), time.Now().Month(), time.Now().Day(),
 		time.Now().Hour(), time.Now().Minute(), time.Now().Second())
-	f, err := os.Create("questionnaire-answers/" + timeString + ".json")
+	f, err := os.Create(*answersDirectory + "/" + timeString + ".json")
 	defer f.Close()
 	check(err)
 	f.WriteString(string(jsonString))
@@ -182,6 +189,8 @@ func questionnaireHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+	flag.Parse()
 	http.HandleFunc("/", questionnaireHandler)
-	http.ListenAndServe(":8", nil)
+	log.Println("Listening on", *listenAddr)
+	log.Fatal(http.ListenAndServe(*listenAddr, nil))
 }
