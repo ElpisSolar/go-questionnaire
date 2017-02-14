@@ -16,7 +16,7 @@ import (
 )
 
 var (
-	listenAddr       = flag.String("l", ":8080", "Address to listen on")
+	listenAddr       = flag.String("l", ":8081", "Address to listen on")
 	answersDirectory = flag.String("d", "questionnaire-answers", "Directory to store questionaire answers")
 )
 
@@ -33,7 +33,7 @@ func StringToHTML(s string) template.HTML {
 
 //given a question q, will define its validators from given fields
 func defineValidators(q map[string]interface{}, locale string) gforms.Validators {
-	dat, err := ioutil.ReadFile("messages.json")
+	dat, err := ioutil.ReadFile("/opt/questionnaire/messages.json")
 	check(err)
 	var errors map[string]interface{}
 	err = json.Unmarshal(dat, &errors)
@@ -123,7 +123,7 @@ func getFields(questions []interface{}, locale string) []gforms.Field {
 }
 
 func getThankYouMessage(locale string) thankYouMessage {
-	dat, err := ioutil.ReadFile("messages.json")
+	dat, err := ioutil.ReadFile("/opt/questionnaire/messages.json")
 	check(err)
 	var messages map[string]interface{}
 	err = json.Unmarshal(dat, &messages)
@@ -144,7 +144,7 @@ func questionnaireHandler(w http.ResponseWriter, r *http.Request) {
 	locale = getLocale(locale)
 
 	//load the json file with questions
-	dat, err := ioutil.ReadFile("questions.json")
+	dat, err := ioutil.ReadFile("/opt/questionnaire/questions.json")
 	check(err)
 	var questions map[string]interface{}
 	err = json.Unmarshal(dat, &questions)
@@ -163,7 +163,7 @@ func questionnaireHandler(w http.ResponseWriter, r *http.Request) {
 		funcMap := template.FuncMap{
 			"stringToHTML": StringToHTML,
 		}
-		t := template.Must(template.New("questionnaire.html").Funcs(funcMap).ParseFiles("questionnaire.html"))
+		t := template.Must(template.New("questionnaire.html").Funcs(funcMap).ParseFiles("/opt/questionnaire/questionnaire.html"))
 		t.Execute(w, form)
 		return
 	}
@@ -182,7 +182,7 @@ func questionnaireHandler(w http.ResponseWriter, r *http.Request) {
 	f.WriteString(string(jsonString))
 
 	//return a thank you view
-	t := template.Must(template.New("thankYou.html").ParseFiles("thankYou.html"))
+	t := template.Must(template.New("thankYou.html").ParseFiles("/op/questionnaire/thankYou.html"))
 	t.Execute(w, getThankYouMessage(locale))
 
 	//TODO: when an answer is recorded send it somewhere for Elpis to access off-camp
