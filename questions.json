@@ -225,5 +225,230 @@
 		"required": true,
 		"name": "contentDepth"
 	}],
-	"ar": []
+	"ar": [{
+		"type": "singleChoiceQuestion",
+		"question": "1. What is your nationality?",
+		"choices": [
+			"Syrian",
+			"Afghan",
+			"Iraqi",
+			"Pakistani",
+			"Iranian",
+			"Other"
+		],
+		"required": false,
+		"name": "nationality"
+	}, {
+		"type": "singleChoiceQuestion",
+		"question": "2. What is your gender?",
+		"choices": [
+			"Male",
+			"Female"
+		],
+		"required": false,
+		"name": "gender"
+	}, {
+		"type": "mulltipleChoiceQuestion",
+		"question": "3. What laguages do you speak?",
+		"choices": [
+			"Arabic",
+			"Farsi/Dari/Pashto",
+			"Kurdish (Kurmanji/Sorani)",
+			"Urdu",
+			"English",
+			"Other"
+		],
+		"required": false,
+		"name": "languages"
+	}, {
+		"type": "singleChoiceQuestion",
+		"question": "4. How long have you been at this camp?",
+		"choices": [
+			"0 - 1 months",
+			"1 - 3 months",
+			"3 - 6 months",
+			"6 - 12 months",
+			"12+ months"
+		],
+		"required": false,
+		"name": "howLong"
+	}, {
+		"type": "singleChoiceQuestion",
+		"question": "5. Has the Elpis service facilitated your life in the camp?",
+		"choices": [
+			"Very much",
+			"Slightly",
+			"Not really",
+			"Not at all"
+		],
+		"required": false,
+		"name": "impact"
+	}, {
+		"type": "singleChoiceQuestion",
+		"question": "6. How often do you use the service?",
+		"choices": [
+			"Very much",
+			"Slightly",
+			"Not really",
+			"Not at all"
+		],
+		"required": false,
+		"name": "impact"
+	}, {
+		"type": "multipleChoiceQuestion",
+		"question": "7. What barriers do you face in using our service?",
+		"choices": [
+			"Availability",
+			"Limited Content",
+			"Language Barrier",
+			"Location in the camp"
+		],
+		"name": "barriers",
+		"required": false
+	}, {
+		"type": "singleChoiceQuestion",
+		"question": "8. How often do you have access to the internet?",
+		"choices": [
+			"Every day",
+			"Few times a week",
+			"Few times a month",
+			"Never"
+		],
+		"name": "accessToInternet",
+		"required": false
+	}, {
+		"type": "singleChoiceQuestion",
+		"question": "9. How much do you currently pay for internet access?",
+		"choices": [
+			"1 - 5 €",
+			"6 - 10 €",
+			"+10 €",
+			"Free"
+		],
+		"name": "internetAccessPrice",
+		"required": false
+	}, {
+		"type": "singleChoiceQuestion",
+		"question": "10. What mobile network provider do you use?",
+		"choices": [
+			"Cosmote",
+			"Vodafone",
+			"Wind",
+			"Other"
+		],
+		"name": "networkProvider",
+		"required": false
+	}, {
+		"type": "multipleChoiceQuestion",
+		"question": "11. Which services on our digital platform did you use the most apart from charging your phone?",
+		"choices": [
+			"Educational books",
+			"Legal information",
+			"Translation",
+			"Wikipedia"
+		],
+		"name": "services",
+		"required": false
+	}, {
+		"type": "multipleChoiceQuestion",
+		"question": "12. What time of day do you access this service?",
+		"choices": [
+			"Morning",
+			"Afternoon",
+			"Midday",
+			"Evening"
+		],
+		"name": "timeOfTheDay",
+		"required": false
+	}, {
+		"type": "textBoxQuestion",
+		"question": "13. What could we do to improve this service? (Let us know what kind of services you would like to see on here).",
+		"maxLength": 500,
+		"name": "improvements",
+		"required": false
+	}, {
+		"type": "singleChoiceQuestion",
+		"question": "14. Quality of Service (Overall User Experience)*",
+		"choices": [
+			"1",
+			"2",
+			"3",
+			"4",
+			"5"
+		],
+		"required": true,
+		"name": "overallExp"
+	}, {
+		"type": "singleChoiceQuestion",
+		"question": "15. User interface*",
+		"choices": [
+			"1",
+			"2",
+			"3",
+			"4",
+			"5"
+		],
+		"required": true,
+		"name": "userInterface"
+	}, {
+		"type": "singleChoiceQuestion",
+		"question": "16. Signal range*",
+		"choices": [
+			"1",
+			"2",
+			"3",
+			"4",
+			"5"
+		],
+		"required": true,
+		"name": "signalRange"
+	}, {
+		"type": "singleChoiceQuestion",
+		"question": "17. Quality of Arabic translation*",
+		"choices": [
+			"1",
+			"2",
+			"3",
+			"4",
+			"5"
+		],
+		"required": true,
+		"name": "translationQuality"
+	}, {
+		"type": "singleChoiceQuestion",
+		"question": "18. Location of Solar Hub*",
+		"choices": [
+			"1",
+			"2",
+			"3",
+			"4",
+			"5"
+		],
+		"required": true,
+		"name": "hubLocation"
+	}, {
+		"type": "singleChoiceQuestion",
+		"question": "19. Quality of content*",
+		"choices": [
+			"1",
+			"2",
+			"3",
+			"4",
+			"5"
+		],
+		"required": true,
+		"name": "contentQuality"
+	}, {
+		"type": "singleChoiceQuestion",
+		"question": "20. Depth of content*",
+		"choices": [
+			"1",
+			"2",
+			"3",
+			"4",
+			"5"
+		],
+		"required": true,
+		"name": "contentDepth"
+	}]
 }
