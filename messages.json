@@ -1,12 +1,18 @@
 {
     "en": {
         "required": "This item is required.",
-        "maxChars": "Please enter no more than %d characters.",
-        "thankYou": "Thank you, your answers have been recorded. <a href=\"%s\">Home</a>"
+        "maxChars": "Please enter no more than 4000 characters.",
+        "thankYou": "Thank you, your answers have been recorded. <a href=\"%s\">Home</a>",
+        "questionnaireExplanation": "We are a student initiative aiming to make education, information and entertainment. The purpose of this survey is to learn more about your needs and recommendations for our service. This information is voluntary and anonymous. We greatly appreciate your input.",
+        "requiredFields": "* - required fields",
+        "scaleExplanation": "For questions 14-20, the scale is 1 - Poor; 2, 3, 4 - Good; 5 - Excellent"
     },
     "ar": {
-        "required": "Butinai iveskite.",
-        "maxChars": "Ne daugiau nei %d veikeju",
-        "thankYou": "Aciu, uzskaiteme jusu atsakymus. <a href=\"%s\">Atgal</a>"
+        "required": "مطلوب هذا البند ",
+        "maxChars": "الرجاء إدخال ما لا يزيد عن 4000 حرف.",
+        "thankYou": "شكرا لك، لقد تم تسجيل إجاباتك.",
+        "questionnaireExplanation": "نحن مشاركون في مبادرة طلابية ونسعى لتوفير لكم موارد تعليمية ومعلومات مفيدة ووسائل التسلية. الغرض من هذا الاستبيان هو أن نتعلم أكثر عن احتياجاتكم واقتراحاتكم لخدماتنا. كل المعلومات من الاستبيان طوعية ومجهولة المصدر. نحن نقدر كثيرا ملاحظاتكم وتعليقاتكم.",
+        "requiredFields": "* - الحقول المطلوبة",
+        "scaleExplanation": "مقياس:1-سيئة, 2, 3, 4-جيدة, 5-ممتازة"
     }
 }

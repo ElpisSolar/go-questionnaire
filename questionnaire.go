@@ -122,20 +122,32 @@ func getFields(questions []interface{}, locale string) []gforms.Field {
 	return fields
 }
 
-func getThankYouMessage(locale string) thankYouMessage {
+func getMessage(locale string, messageString string) string {
 	dat, err := ioutil.ReadFile("/opt/questionnaire/messages.json")
 	check(err)
 	var messages map[string]interface{}
 	err = json.Unmarshal(dat, &messages)
 	check(err)
 
-	message := messages[locale].(map[string]interface{})["thankYou"].(string)
+	message := messages[locale].(map[string]interface{})[messageString].(string)
+	return message
+}
+
+func getThankYouMessage(locale string) thankYouMessage {
+	message := getMessage(locale, "thankYou")
 	message = fmt.Sprintf(message, "/")
 	return thankYouMessage{StringToHTML(message)}
 }
 
 type thankYouMessage struct {
 	Message template.HTML
+}
+
+type templateContext struct {
+	Message          string
+	RequiredFields   string
+	ScaleExplanation string
+	Form             *gforms.FormInstance
 }
 
 func questionnaireHandler(w http.ResponseWriter, r *http.Request) {
@@ -164,7 +176,7 @@ func questionnaireHandler(w http.ResponseWriter, r *http.Request) {
 			"stringToHTML": StringToHTML,
 		}
 		t := template.Must(template.New("questionnaire.html").Funcs(funcMap).ParseFiles("/opt/questionnaire/questionnaire.html"))
-		t.Execute(w, form)
+		t.Execute(w, templateContext{getMessage(locale, "questionnaireExplanation"), getMessage(locale, "requiredFields"), getMessage(locale, "scaleExplanation"), form})
 		return
 	}
 
@@ -185,7 +197,6 @@ func questionnaireHandler(w http.ResponseWriter, r *http.Request) {
 	t := template.Must(template.New("thankYou.html").ParseFiles("/op/questionnaire/thankYou.html"))
 	t.Execute(w, getThankYouMessage(locale))
 
-	//TODO: when an answer is recorded send it somewhere for Elpis to access off-camp
 }
 
 func main() {

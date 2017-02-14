@@ -53,12 +53,12 @@
 
 <body>
     <div>
-    <p> We are a student initiative aiming to make education, information and entertainment. The purpose of this survey is to learn more about your needs and recommendations for our service. This information is voluntary and anonymous. We greatly appreciate your input. </p>
-    <p> * - required fields </p>
-    <p> For questions 14-20, the scale is 1 - Poor; 2, 3, 4 - Good; 5 - Excellent </p>
-        
+    <p> <b>{{.Message | stringToHTML}}</b> </p>
+    <p> <b>{{.RequiredFields | stringToHTML}}</b> </p>
+    <p> <b>{{.ScaleExplanation | stringToHTML}}</b> </p>
+
     <form method="post" class="pure-form-stacked">
-            {{range $i, $field := .Fields}}
+            {{range $i, $field := .Form.Fields}}
             <label for="{{$field.GetName}}">{{$field.GetName}}: </label>{{$field.Html | stringToHTML}}
             <br/>
             {{range $ei, $err := $field.Errors}}<label class="error">{{$err}}</label>{{end}}<br />
