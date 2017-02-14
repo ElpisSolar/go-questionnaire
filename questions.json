@@ -137,7 +137,7 @@
 	}, {
 		"type": "textBoxQuestion",
 		"question": "13. What could we do to improve this service? (Let us know what kind of services you would like to see on here).",
-		"maxLength": 500,
+		"maxLength": 4000,
 		"name": "improvements",
 		"required": false
 	}, {
@@ -227,148 +227,148 @@
 	}],
 	"ar": [{
 		"type": "singleChoiceQuestion",
-		"question": "1. What is your nationality?",
+		"question": "الجنسية",
 		"choices": [
-			"Syrian",
-			"Afghan",
-			"Iraqi",
-			"Pakistani",
-			"Iranian",
-			"Other"
+			"سوري",
+			"أفغاني",
+			"عراقي",
+			"باكستاني",
+			"إراني",
+			"جنسية أخرى"
 		],
 		"required": false,
 		"name": "nationality"
 	}, {
 		"type": "singleChoiceQuestion",
-		"question": "2. What is your gender?",
+		"question": "الجنس",
 		"choices": [
-			"Male",
-			"Female"
+			"إناثا",
+			"ذكرا"
 		],
 		"required": false,
 		"name": "gender"
 	}, {
 		"type": "mulltipleChoiceQuestion",
-		"question": "3. What laguages do you speak?",
+		"question": "لغات",
 		"choices": [
-			"Arabic",
-			"Farsi/Dari/Pashto",
-			"Kurdish (Kurmanji/Sorani)",
-			"Urdu",
-			"English",
-			"Other"
+			"عربي",
+			"(كوردي (الكرمانجية، السورانية",
+			"الإنجليزية",
+			"الفارسي، الداري، الباشتو",
+			"اردو",
+			"لغة أخرى"
 		],
 		"required": false,
 		"name": "languages"
-	}, {
+	},{
 		"type": "singleChoiceQuestion",
-		"question": "4. How long have you been at this camp?",
+		"question": "منذ متى بقيت في المخيم؟",
 		"choices": [
-			"0 - 1 months",
-			"1 - 3 months",
-			"3 - 6 months",
-			"6 - 12 months",
-			"12+ months"
+			"بين ٦أشهر وسنة",
+			"بين شهر و٣ أشهر",
+			"أقل من شهر",
+			"أكثر من سنة",
+			"بين٣ و٦ أشهر"
 		],
 		"required": false,
 		"name": "howLong"
-	}, {
+	},  {
 		"type": "singleChoiceQuestion",
-		"question": "5. Has the Elpis service facilitated your life in the camp?",
+		"question": "هل سهّلت أو ساعدت خدمتنا حياتك؟",
 		"choices": [
-			"Very much",
-			"Slightly",
-			"Not really",
-			"Not at all"
+			"كثيرا",
+			"احيانا",
+			"قليلا",
+			"لم تساعدني"
 		],
 		"required": false,
 		"name": "impact"
 	}, {
 		"type": "singleChoiceQuestion",
-		"question": "6. How often do you use the service?",
+		"question": "كم مرة تستخدم خدماتنا في العادة؟",
 		"choices": [
-			"Very much",
-			"Slightly",
-			"Not really",
-			"Not at all"
+			"عدة مرات في يوم واحد",
+			"-بضع مرات في شهر",
+			"بضع مرات في الاسبوع",
+			"كل بضعة أشهر"
 		],
 		"required": false,
-		"name": "impact"
+		"name": "howOften"
 	}, {
-		"type": "multipleChoiceQuestion",
-		"question": "7. What barriers do you face in using our service?",
+		"type": "singleChoiceQuestion",
+		"question": "ما أكبر العقبات التي تواجهها في استخدام خدمتنا؟",
 		"choices": [
-			"Availability",
-			"Limited Content",
-			"Language Barrier",
-			"Location in the camp"
+			"المتاحية",
+			"الحاجز اللغوي",
+			"المحتويات المحدودة",
+			"مكانها في المخيم"
 		],
 		"name": "barriers",
 		"required": false
-	}, {
-		"type": "singleChoiceQuestion",
-		"question": "8. How often do you have access to the internet?",
+	},{
+		"type": "multipleChoiceQuestion",
+		"question": "كم مرة يمكنك استخدام الأنترنت في العادة؟",
 		"choices": [
-			"Every day",
-			"Few times a week",
-			"Few times a month",
-			"Never"
+			"كل يوم",
+			"عدة مرات في الأسبوع",
+			"بضع مرات شهريا",
+			"أبدا"
 		],
 		"name": "accessToInternet",
 		"required": false
-	}, {
+	},  {
 		"type": "singleChoiceQuestion",
-		"question": "9. How much do you currently pay for internet access?",
+		"question": "كم تدفع شهريا من أجل خدمة الأنترنت؟",
 		"choices": [
 			"1 - 5 €",
 			"6 - 10 €",
 			"+10 €",
-			"Free"
+			"حر"
 		],
 		"name": "internetAccessPrice",
 		"required": false
 	}, {
 		"type": "singleChoiceQuestion",
-		"question": "10. What mobile network provider do you use?",
+		"question": "تستخدم مزود ما لخدمة الأنترنت؟",
 		"choices": [
 			"Cosmote",
-			"Vodafone",
+			"فودافون",
 			"Wind",
-			"Other"
+			"مزود أخر"
 		],
 		"name": "networkProvider",
 		"required": false
 	}, {
 		"type": "multipleChoiceQuestion",
-		"question": "11. Which services on our digital platform did you use the most apart from charging your phone?",
+		"question": "ما الخدمة التي تستخدمها في أغلب الأحيان باستثناء شحن هاتفك؟",
 		"choices": [
-			"Educational books",
-			"Legal information",
-			"Translation",
-			"Wikipedia"
+			"موارد تعليمية",
+			"الترجمة",
+			"معلومات قانونية",
+			"ويكيبيديا"
 		],
 		"name": "services",
 		"required": false
 	}, {
 		"type": "multipleChoiceQuestion",
-		"question": "12. What time of day do you access this service?",
+		"question": "تستخدم الخدمة في أي وقت من اليوم؟",
 		"choices": [
-			"Morning",
-			"Afternoon",
-			"Midday",
-			"Evening"
+			"صباحا",
+			"بالليل",
+			"في منتصف النهار",
+			"بعد الظهر"
 		],
 		"name": "timeOfTheDay",
 		"required": false
 	}, {
 		"type": "textBoxQuestion",
-		"question": "13. What could we do to improve this service? (Let us know what kind of services you would like to see on here).",
-		"maxLength": 500,
+		"question": " (ماذا يمكننا القيام به لكي تحسين التطبيق؟ (ما هي الخدمات والموارد التي تريد منا الإضافة إلى التطبيق",
+		"maxLength": 40000,
 		"name": "improvements",
 		"required": false
 	}, {
 		"type": "singleChoiceQuestion",
-		"question": "14. Quality of Service (Overall User Experience)*",
+		"question": "جودة كل الخدمات بشكل عام*",
 		"choices": [
 			"1",
 			"2",
@@ -380,7 +380,7 @@
 		"name": "overallExp"
 	}, {
 		"type": "singleChoiceQuestion",
-		"question": "15. User interface*",
+		"question": "تصميم واجهة المستخدم*",
 		"choices": [
 			"1",
 			"2",
@@ -392,7 +392,7 @@
 		"name": "userInterface"
 	}, {
 		"type": "singleChoiceQuestion",
-		"question": "16. Signal range*",
+		"question": "قوة ونطاق الإشارة*",
 		"choices": [
 			"1",
 			"2",
@@ -404,7 +404,7 @@
 		"name": "signalRange"
 	}, {
 		"type": "singleChoiceQuestion",
-		"question": "17. Quality of Arabic translation*",
+		"question": "جودة الترجمة العربية*",
 		"choices": [
 			"1",
 			"2",
@@ -416,7 +416,7 @@
 		"name": "translationQuality"
 	}, {
 		"type": "singleChoiceQuestion",
-		"question": "18. Location of Solar Hub*",
+		"question": "مكان جهاز تخزين الطاقة الشمسية في المخيم*",
 		"choices": [
 			"1",
 			"2",
@@ -428,7 +428,7 @@
 		"name": "hubLocation"
 	}, {
 		"type": "singleChoiceQuestion",
-		"question": "19. Quality of content*",
+		"question": "جودة موارد*",
 		"choices": [
 			"1",
 			"2",
@@ -440,7 +440,7 @@
 		"name": "contentQuality"
 	}, {
 		"type": "singleChoiceQuestion",
-		"question": "20. Depth of content*",
+		"question": "عمق الموارد*",
 		"choices": [
 			"1",
 			"2",
