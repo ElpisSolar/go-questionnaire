@@ -1,74 +1,251 @@
 {
     "en": [
         {
-            "type": "textBoxQuestion",
-            "question": "What is your name?*",
-            "maxLength": 100,
-            "name": "name",
-            "required": true
-        },
-        {
-            "type": "numberQuestion",
-            "question": "What is your age?*",
-            "name": "age",
-            "required": true
-        },
-        {
-            "type": "multipleChoiceQuestion",
-            "question": "What fruits do you like?",
+            "type": "singleChoiceQuestion",
+            "question": "What is your nationality?",
             "choices": [
-                "Apples",
-                "Pears",
-                "Tomatoes"
+                "Syrian",
+                "Afghan",
+                "Iraqi",
+                "Pakistani",
+                "Iranian",
+                "Other"
             ],
             "required": false,
-            "name": "fruits"
+            "name": "nationality"
         },
         {
             "type": "singleChoiceQuestion",
-            "question": "What is your gender?*",
+            "question": "What is your gender?",
             "choices": [
                 "Male",
                 "Female"
             ],
-            "required": true,
+            "required": false,
             "name": "gender"
-        }
-    ],
-    "ar": [
-        {
-            "type": "textBoxQuestion",
-            "question": "Koks tavo vardas?*",
-            "maxLength": 100,
-            "name": "name",
-            "required": true
         },
         {
-            "type": "numberQuestion",
-            "question": "Kiek tau metu?*",
-            "name": "age",
-            "required": true
-        },
-        {
-            "type": "multipleChoiceQuestion",
-            "question": "Kokius megsti vaisius?",
+            "type": "mulltipleChoiceQuestion",
+            "question": "What laguages do you speak?",
             "choices": [
-                "Obuoliai",
-                "Kriauses",
-                "Pomidorai"
+                "Arabic",
+                "Farsi/Dari/Pashto",
+                "Kurdish (Kurmanji/Sorani)",
+                "Urdu",
+                "English",
+                "Other"
             ],
             "required": false,
-            "name": "fruits"
+            "name": "languages"
         },
         {
             "type": "singleChoiceQuestion",
-            "question": "Kokia tavo lytis?*",
+            "question": "How long have you been at this camp?",
             "choices": [
-                "Vyras",
-                "Moteris"
+                "0 - 1 months",
+                "1 - 3 months",
+                "3 - 6 months",
+                "6 - 12 months",
+                "12+ months"
+            ],
+            "required": false,
+            "name": "howLong"
+        },
+        {
+            "type": "singleChoiceQuestion",
+            "question": "Has the Elpis service facilitated your life in the camp?",
+            "choices": [
+                "Very much",
+                "Slightly",
+                "Not really",
+                "Not at all",
+            ],
+            "required": false,
+            "name": "impact"
+        },
+        {
+            "type": "singleChoiceQuestion",
+            "question": "How often do you use the service?",
+            "choices": [
+                "Very much",
+                "Slightly",
+                "Not really",
+                "Not at all",
+            ],
+            "required": false,
+            "name": "impact"
+        },
+        {
+            "type": "multipleChoiceQuestion",
+            "question": "What barriers do you face in using our service?",
+            "choices": [
+                "Availability",
+                "Limited Content",
+                "Language Barrier",
+                "Location in the camp",
+            ],
+            "name": "barriers",
+            "required": false
+        },
+        {
+            "type": "singleChoiceQuestion",
+            "question": "How often do you have access to the internet?",
+            "choices": [
+                "Every day",
+                "Few times a week",
+                "Few times a month",
+                "Never",
+            ],
+            "name": "accessToInternet",
+            "required": false
+        },
+        {
+            "type": "singleChoiceQuestion",
+            "question": "How much do you currently pay for internet access?",
+            "choices": [
+                "1 - 5 €",
+                "6 - 10 €",
+                "+10 €",
+                "Free",
+            ],
+            "name": "internetAccessPrice",
+            "required": false
+        },
+        {
+            "type": "singleChoiceQuestion",
+            "question": "What mobile network provider do you use?",
+            "choices": [
+                "Cosmote",
+                "Vodafone",
+                "Wind",
+                "Other",
+            ],
+            "name": "networkProvider",
+            "required": false
+        },
+        {
+            "type": "multipleChoiceQuestion",
+            "question": "Which services on our digital platform did you use the most apart from charging your phone?",
+            "choices": [
+                "Educational books",
+                "Legal information",
+                "Translation",
+                "Wikipedia",
+            ],
+            "name": "services",
+            "required": false
+        },
+        {
+            "type": "multipleChoiceQuestion",
+            "question": "What time of day do you access this service?",
+            "choices": [
+                "Morning",
+                "Afternoon",
+                "Midday",
+                "Evening",
+            ],
+            "name": "timeOfTheDay",
+            "required": false
+        },
+        {
+            "type": "textBoxQuestion",
+            "question": "What could we do to improve this service? (Let us know what kind of services you would like to see on here).",
+            "maxLength": 500,
+            "name": "improvements",
+            "required": false
+        },
+        {
+            "type": "singleChoiceQuestion",
+            "question": "Quality of Service (Overall User Experience)*:",
+            "choices": [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5"
             ],
             "required": true,
-            "name": "lytis"
-        }
+            "name": "overallExp"
+        },
+        {
+            "type": "singleChoiceQuestion",
+            "question": "User interface*:",
+            "choices": [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5"
+            ],
+            "required": true,
+            "name": "userInterface"
+        },
+        {
+            "type": "singleChoiceQuestion",
+            "question": "Signal range*:",
+            "choices": [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5"
+            ],
+            "required": true,
+            "name": "signalRange"
+        },
+        {
+            "type": "singleChoiceQuestion",
+            "question": "Quality of Arabic translation*:",
+            "choices": [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5"
+            ],
+            "required": true,
+            "name": "translationQuality"
+        },
+        {
+            "type": "singleChoiceQuestion",
+            "question": "Location of Solar Hub*:",
+            "choices": [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5"
+            ],
+            "required": true,
+            "name": "hubLocation"
+        },
+        {
+            "type": "singleChoiceQuestion",
+            "question": "Quality of content*:",
+            "choices": [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5"
+            ],
+            "required": true,
+            "name": "contentQuality"
+        },
+        {
+            "type": "singleChoiceQuestion",
+            "question": "Depth of content*:",
+            "choices": [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5"
+            ],
+            "required": true,
+            "name": "contentDepth"
+        },
+    ],
+    "ar": [
     ]
 }
