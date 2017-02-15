@@ -18,6 +18,7 @@ import (
 var (
 	listenAddr       = flag.String("l", ":8081", "Address to listen on")
 	answersDirectory = flag.String("d", "questionnaire-answers", "Directory to store questionaire answers")
+	webRoot          = flag.String("r", "/", "Web root for links")
 )
 
 func check(e error) {
@@ -148,6 +149,7 @@ type templateContext struct {
 	RequiredFields   string
 	ScaleExplanation string
 	Form             *gforms.FormInstance
+	Root             string
 }
 
 func questionnaireHandler(w http.ResponseWriter, r *http.Request) {
@@ -176,7 +178,12 @@ func questionnaireHandler(w http.ResponseWriter, r *http.Request) {
 			"stringToHTML": StringToHTML,
 		}
 		t := template.Must(template.New("questionnaire.html").Funcs(funcMap).ParseFiles("/opt/questionnaire/questionnaire.html"))
-		t.Execute(w, templateContext{getMessage(locale, "questionnaireExplanation"), getMessage(locale, "requiredFields"), getMessage(locale, "scaleExplanation"), form})
+		t.Execute(w, templateContext{
+			getMessage(locale, "questionnaireExplanation"),
+			getMessage(locale, "requiredFields"),
+			getMessage(locale, "scaleExplanation"),
+			form,
+			*webRoot})
 		return
 	}
 
